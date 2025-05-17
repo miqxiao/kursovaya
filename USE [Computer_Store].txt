@@ -1,12 +1,12 @@
-USE [Computer_Store]
+USE [Computer_Store1]
 GO
-/****** Object:  Table [dbo].[Category]    Script Date: 14.03.2025 14:15:38 ******/
+/****** Object:  Table [dbo].[Category]    Script Date: 17.05.2025 12:13:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Category](
-	[category_ID] [int] NOT NULL,
+	[category_ID] [int] IDENTITY(1,1) NOT NULL,
 	[category_name] [nvarchar](50) NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -14,13 +14,13 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Customer]    Script Date: 14.03.2025 14:15:39 ******/
+/****** Object:  Table [dbo].[Customer]    Script Date: 17.05.2025 12:13:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Customer](
-	[customer_ID] [int] NOT NULL,
+	[customer_ID] [int] IDENTITY(1,1) NOT NULL,
 	[first_name] [nvarchar](50) NOT NULL,
 	[last_name] [nvarchar](50) NOT NULL,
 	[phone] [nvarchar](15) NULL,
@@ -31,13 +31,13 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Employee]    Script Date: 14.03.2025 14:15:39 ******/
+/****** Object:  Table [dbo].[Employee]    Script Date: 17.05.2025 12:13:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Employee](
-	[employee_ID] [int] NOT NULL,
+	[employee_ID] [int] IDENTITY(1,1) NOT NULL,
 	[first_name] [nvarchar](50) NOT NULL,
 	[last_name] [nvarchar](50) NOT NULL,
 	[position] [nvarchar](50) NOT NULL,
@@ -48,7 +48,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Employee_Order]    Script Date: 14.03.2025 14:15:39 ******/
+/****** Object:  Table [dbo].[Employee_Order]    Script Date: 17.05.2025 12:13:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -64,13 +64,13 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Order]    Script Date: 14.03.2025 14:15:39 ******/
+/****** Object:  Table [dbo].[Order]    Script Date: 17.05.2025 12:13:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Order](
-	[order_ID] [int] NOT NULL,
+	[order_ID] [int] IDENTITY(1,1) NOT NULL,
 	[order_date] [datetime] NOT NULL,
 	[status] [nvarchar](100) NOT NULL,
 	[customer_ID] [int] NOT NULL,
@@ -81,7 +81,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Order_Product]    Script Date: 14.03.2025 14:15:39 ******/
+/****** Object:  Table [dbo].[Order_Product]    Script Date: 17.05.2025 12:13:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -97,13 +97,13 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Product]    Script Date: 14.03.2025 14:15:39 ******/
+/****** Object:  Table [dbo].[Product]    Script Date: 17.05.2025 12:13:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Product](
-	[product_ID] [int] NOT NULL,
+	[product_ID] [int] IDENTITY(1,1) NOT NULL,
 	[product_name] [nvarchar](100) NOT NULL,
 	[price] [decimal](10, 2) NOT NULL,
 	[category_ID] [int] NOT NULL,
@@ -113,13 +113,13 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Store]    Script Date: 14.03.2025 14:15:39 ******/
+/****** Object:  Table [dbo].[Store]    Script Date: 17.05.2025 12:13:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Store](
-	[store_ID] [int] NOT NULL,
+	[store_ID] [int] IDENTITY(1,1) NOT NULL,
 	[store_name] [nvarchar](100) NOT NULL,
 	[adress] [nvarchar](255) NOT NULL,
 PRIMARY KEY CLUSTERED 
@@ -128,13 +128,13 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Supplier]    Script Date: 14.03.2025 14:15:39 ******/
+/****** Object:  Table [dbo].[Supplier]    Script Date: 17.05.2025 12:13:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Supplier](
-	[supplier_ID] [int] NOT NULL,
+	[supplier_ID] [int] IDENTITY(1,1) NOT NULL,
 	[supplier_name] [nvarchar](100) NOT NULL,
 	[contact_phone] [nvarchar](15) NULL,
 PRIMARY KEY CLUSTERED 
@@ -143,7 +143,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Supplier_Product]    Script Date: 14.03.2025 14:15:39 ******/
+/****** Object:  Table [dbo].[Supplier_Product]    Script Date: 17.05.2025 12:13:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -159,65 +159,79 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (9, N'	Accessories')
+SET IDENTITY_INSERT [dbo].[Category] ON 
 GO
-INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (10, N'	Gaming Consoles')
+INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (1, N'Accessories')
 GO
-INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (6, N'	Monitors')
+INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (8, N'Desktops')
 GO
-INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (8, N'	Networking Equipment')
+INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (2, N'Gaming Consoles')
 GO
-INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (5, N'	Peripherals')
+INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (9, N'Laptops')
 GO
-INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (2, N'	Smartphones')
+INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (3, N'Monitors')
 GO
-INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (7, N'	Storage Devices')
+INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (4, N'Networking Equipment')
 GO
-INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (4, N'Desktops')
+INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (5, N'Peripherals')
 GO
-INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (1, N'Laptops')
+INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (6, N'Smartphones')
 GO
-INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (3, N'Tablets')
+INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (7, N'Storage Devices')
 GO
-INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (1, N'John', N'Smith', N'	123-456-7890', N'john.smith@example.com')
+INSERT [dbo].[Category] ([category_ID], [category_name]) VALUES (10, N'Tablets')
 GO
-INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (2, N'Mary', N'Johnson', N'	234-567-8901', N'mary.johnson@example.com')
+SET IDENTITY_INSERT [dbo].[Category] OFF
 GO
-INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (3, N'Robert', N'	Williams', N'345-678-9012', N'robert.williams@example.com')
+SET IDENTITY_INSERT [dbo].[Customer] ON 
 GO
-INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (4, N'Patricia', N'Brown', N'	456-789-0123', N'patricia.brown@example.com')
+INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (1, N'John', N'Smith', N'123-456-7890', N'john.smith@example.com')
 GO
-INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (5, N'	Michael', N'Jones', N'567-890-1234', N'michael.jones@example.com')
+INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (2, N'Mary', N'Johnson', N'234-567-8901', N'mary.johnson@example.com')
 GO
-INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (6, N'	Linda', N'Garcia', N'	678-901-2345', N'linda.garcia@example.com')
+INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (3, N'Robert', N'Williams', N'345-678-9012', N'robert.williams@example.com')
 GO
-INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (7, N'David', N'	Miller', N'789-012-3456', N'david.miller@example.com')
+INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (4, N'Patricia', N'Brown', N'456-789-0123', N'patricia.brown@example.com')
 GO
-INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (8, N'	Barbara', N'	Davis', N'	890-123-4567', N'barbara.davis@example.com')
+INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (5, N'Michael', N'Jones', N'567-890-1234', N'michael.jones@example.com')
 GO
-INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (9, N'James', N'	Rodriguez', N'901-234-5678', N'james.rodriguez@example.com')
+INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (6, N'Linda', N'Garcia', N'678-901-2345', N'linda.garcia@example.com')
+GO
+INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (7, N'David', N'Miller', N'789-012-3456', N'david.miller@example.com')
+GO
+INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (8, N'Barbara', N'Davis', N'890-123-4567', N'barbara.davis@example.com')
+GO
+INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (9, N'James', N'Rodriguez', N'901-234-5678', N'james.rodriguez@example.com')
 GO
 INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (10, N'Susan', N'Martinez', N'012-345-6789', N'susan.martinez@example.com')
 GO
+INSERT [dbo].[Customer] ([customer_ID], [first_name], [last_name], [phone], [email]) VALUES (11, N'Polina', N'Valova', N'952-939-4765', N'meowmeow@example.com')
+GO
+SET IDENTITY_INSERT [dbo].[Customer] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Employee] ON 
+GO
 INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (1, N'Alan', N'Brown', N'Manager', 1)
 GO
-INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (2, N'Betty', N'	White', N'Cashier', 1)
+INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (2, N'Betty', N'White', N'Cashier', 1)
 GO
-INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (3, N'	Charles', N'	Green', N'Warehouse', 2)
+INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (3, N'Charles', N'Green', N'Warehouse', 2)
 GO
 INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (4, N'Diana', N'Black', N'Courier', 2)
 GO
-INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (5, N'Edward', N'	King', N'Manager', 3)
+INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (5, N'Edward', N'King', N'Manager', 3)
 GO
-INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (6, N'Fiona', N'Scott', N'	Cashier', 3)
+INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (6, N'Fiona', N'Scott', N'Cashier', 3)
 GO
-INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (7, N'George', N'	Turner', N'	Warehouse', 4)
+INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (7, N'George', N'Turner', N'Warehouse', 4)
 GO
-INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (8, N'	Helen', N'	Walker', N'	Courier', 4)
+INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (8, N'Helen', N'Walker', N'Courier', 4)
 GO
-INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (9, N'	Ian', N'Harris', N'Manager', 5)
+INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (9, N'Ian', N'Harris', N'Manager', 5)
 GO
 INSERT [dbo].[Employee] ([employee_ID], [first_name], [last_name], [position], [store_ID]) VALUES (10, N'Jane', N'Lewis', N'Cashier', 6)
+GO
+SET IDENTITY_INSERT [dbo].[Employee] OFF
 GO
 INSERT [dbo].[Employee_Order] ([employee_ID], [order_ID], [role]) VALUES (1, 1, N'1')
 GO
@@ -239,25 +253,29 @@ INSERT [dbo].[Employee_Order] ([employee_ID], [order_ID], [role]) VALUES (9, 9, 
 GO
 INSERT [dbo].[Employee_Order] ([employee_ID], [order_ID], [role]) VALUES (10, 10, N'7')
 GO
-INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (1, CAST(N'2025-03-01T10:00:00.000' AS DateTime), N'Pending', 1, 1)
+SET IDENTITY_INSERT [dbo].[Order] ON 
 GO
-INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (2, CAST(N'2025-03-02T11:15:00.000' AS DateTime), N'Processing', 2, 2)
+INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (1, CAST(N'2025-01-03T10:00:00.000' AS DateTime), N'Pending', 1, 1)
+GO
+INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (2, CAST(N'2025-02-03T11:15:00.000' AS DateTime), N'Processing', 2, 2)
 GO
 INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (3, CAST(N'2025-03-03T09:30:00.000' AS DateTime), N'Completed', 3, 3)
 GO
-INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (4, CAST(N'2025-03-04T14:45:00.000' AS DateTime), N'Cancelled', 4, 4)
+INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (4, CAST(N'2025-04-03T14:45:00.000' AS DateTime), N'Cancelled', 4, 4)
 GO
-INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (5, CAST(N'2025-03-05T16:20:00.000' AS DateTime), N'Completed', 5, 5)
+INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (5, CAST(N'2025-05-03T16:20:00.000' AS DateTime), N'Completed', 5, 5)
 GO
-INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (6, CAST(N'2025-03-06T12:00:00.000' AS DateTime), N'Processing', 6, 6)
+INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (6, CAST(N'2025-06-03T12:00:00.000' AS DateTime), N'Processing', 6, 6)
 GO
-INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (7, CAST(N'2025-03-07T13:30:00.000' AS DateTime), N'Pending', 7, 7)
+INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (7, CAST(N'2025-07-03T13:30:00.000' AS DateTime), N'Pending', 7, 7)
 GO
-INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (8, CAST(N'2025-03-08T15:00:00.000' AS DateTime), N'Completed', 8, 8)
+INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (8, CAST(N'2025-08-03T15:00:00.000' AS DateTime), N'Completed', 8, 8)
 GO
-INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (9, CAST(N'2025-03-09T10:45:00.000' AS DateTime), N'Processing', 9, 9)
+INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (9, CAST(N'2025-09-03T10:45:00.000' AS DateTime), N'Processing', 9, 9)
 GO
-INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (10, CAST(N'2025-03-10T09:00:00.000' AS DateTime), N'Pending', 10, 10)
+INSERT [dbo].[Order] ([order_ID], [order_date], [status], [customer_ID], [store_ID]) VALUES (10, CAST(N'2025-10-03T09:00:00.000' AS DateTime), N'Pending', 10, 4)
+GO
+SET IDENTITY_INSERT [dbo].[Order] OFF
 GO
 INSERT [dbo].[Order_Product] ([order_ID], [product_ID], [quantity]) VALUES (1, 1, 1)
 GO
@@ -281,7 +299,9 @@ INSERT [dbo].[Order_Product] ([order_ID], [product_ID], [quantity]) VALUES (8, 1
 GO
 INSERT [dbo].[Order_Product] ([order_ID], [product_ID], [quantity]) VALUES (9, 1, 1)
 GO
-INSERT [dbo].[Order_Product] ([order_ID], [product_ID], [quantity]) VALUES (10, 2, 1)
+INSERT [dbo].[Order_Product] ([order_ID], [product_ID], [quantity]) VALUES (10, 2, 2)
+GO
+SET IDENTITY_INSERT [dbo].[Product] ON 
 GO
 INSERT [dbo].[Product] ([product_ID], [product_name], [price], [category_ID]) VALUES (1, N'Dell Inspiron Laptop', CAST(800.00 AS Decimal(10, 2)), 1)
 GO
@@ -303,6 +323,12 @@ INSERT [dbo].[Product] ([product_ID], [product_name], [price], [category_ID]) VA
 GO
 INSERT [dbo].[Product] ([product_ID], [product_name], [price], [category_ID]) VALUES (10, N'Seagate 2TB External HDD', CAST(100.00 AS Decimal(10, 2)), 7)
 GO
+INSERT [dbo].[Product] ([product_ID], [product_name], [price], [category_ID]) VALUES (11, N'пупупу', CAST(4545.00 AS Decimal(10, 2)), 6)
+GO
+SET IDENTITY_INSERT [dbo].[Product] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Store] ON 
+GO
 INSERT [dbo].[Store] ([store_ID], [store_name], [adress]) VALUES (1, N'Tech Hub', N'123 Main St, New York, NY')
 GO
 INSERT [dbo].[Store] ([store_ID], [store_name], [adress]) VALUES (2, N'Comp World', N'456 Oak Ave, Los Angeles, CA')
@@ -323,6 +349,10 @@ INSERT [dbo].[Store] ([store_ID], [store_name], [adress]) VALUES (9, N'Future Te
 GO
 INSERT [dbo].[Store] ([store_ID], [store_name], [adress]) VALUES (10, N'Techno Point', N'707 Elm St, San Jose, CA')
 GO
+SET IDENTITY_INSERT [dbo].[Store] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Supplier] ON 
+GO
 INSERT [dbo].[Supplier] ([supplier_ID], [supplier_name], [contact_phone]) VALUES (1, N'TechSupply Inc.', N'111-222-3333')
 GO
 INSERT [dbo].[Supplier] ([supplier_ID], [supplier_name], [contact_phone]) VALUES (2, N'GadgetWorld', N'222-333-4444')
@@ -339,33 +369,27 @@ INSERT [dbo].[Supplier] ([supplier_ID], [supplier_name], [contact_phone]) VALUES
 GO
 INSERT [dbo].[Supplier] ([supplier_ID], [supplier_name], [contact_phone]) VALUES (8, N'MegaStore Supplies', N'888-999-0000')
 GO
-INSERT [dbo].[Supplier] ([supplier_ID], [supplier_name], [contact_phone]) VALUES (9, N'TechDirect', N'999-000-1111')
+SET IDENTITY_INSERT [dbo].[Supplier] OFF
 GO
-INSERT [dbo].[Supplier] ([supplier_ID], [supplier_name], [contact_phone]) VALUES (10, N'Future Electronics', N'000-111-2222')
+INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (1, 1, CAST(N'2025-02-01T08:00:00.000' AS DateTime))
 GO
-INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (1, 1, CAST(N'2025-03-02T03:50:47.097' AS DateTime))
+INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (2, 2, CAST(N'2025-02-02T09:15:00.000' AS DateTime))
 GO
-INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (2, 2, CAST(N'2025-03-02T03:51:37.350' AS DateTime))
+INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (3, 3, CAST(N'2025-02-03T10:30:00.000' AS DateTime))
 GO
-INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (3, 3, CAST(N'2025-03-02T03:52:27.587' AS DateTime))
+INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (4, 4, CAST(N'2025-02-04T11:45:00.000' AS DateTime))
 GO
-INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (4, 4, CAST(N'2025-03-02T03:53:17.823' AS DateTime))
+INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (5, 5, CAST(N'2025-02-05T13:00:00.000' AS DateTime))
 GO
-INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (5, 5, CAST(N'2025-03-02T03:54:08.097' AS DateTime))
+INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (6, 6, CAST(N'2025-02-06T14:15:00.000' AS DateTime))
 GO
-INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (6, 6, CAST(N'2025-03-02T03:54:58.350' AS DateTime))
+INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (7, 7, CAST(N'2025-02-07T15:30:00.000' AS DateTime))
 GO
-INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (7, 7, CAST(N'2025-03-02T03:55:48.623' AS DateTime))
-GO
-INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (8, 8, CAST(N'2025-03-02T03:56:38.887' AS DateTime))
-GO
-INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (9, 9, CAST(N'2025-03-02T03:57:29.130' AS DateTime))
-GO
-INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (10, 10, CAST(N'2025-03-02T03:58:19.397' AS DateTime))
+INSERT [dbo].[Supplier_Product] ([supplier_ID], [product_ID], [supply_date]) VALUES (8, 8, CAST(N'2025-02-08T16:45:00.000' AS DateTime))
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__Category__5189E255D9D1CD64]    Script Date: 14.03.2025 14:15:39 ******/
+/****** Object:  Index [UQ__Category__5189E25584A3C4DE]    Script Date: 17.05.2025 12:13:32 ******/
 ALTER TABLE [dbo].[Category] ADD UNIQUE NONCLUSTERED 
 (
 	[category_name] ASC
@@ -373,7 +397,7 @@ ALTER TABLE [dbo].[Category] ADD UNIQUE NONCLUSTERED
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__Customer__AB6E616418ED2CEA]    Script Date: 14.03.2025 14:15:39 ******/
+/****** Object:  Index [UQ__Customer__AB6E61645A7FF23B]    Script Date: 17.05.2025 12:13:32 ******/
 ALTER TABLE [dbo].[Customer] ADD UNIQUE NONCLUSTERED 
 (
 	[email] ASC
@@ -381,7 +405,7 @@ ALTER TABLE [dbo].[Customer] ADD UNIQUE NONCLUSTERED
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__Customer__B43B145F3859209C]    Script Date: 14.03.2025 14:15:39 ******/
+/****** Object:  Index [UQ__Customer__B43B145F95DAE9CF]    Script Date: 17.05.2025 12:13:32 ******/
 ALTER TABLE [dbo].[Customer] ADD UNIQUE NONCLUSTERED 
 (
 	[phone] ASC
@@ -389,7 +413,7 @@ ALTER TABLE [dbo].[Customer] ADD UNIQUE NONCLUSTERED
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__Store__DB2DB481C6FFD8AC]    Script Date: 14.03.2025 14:15:39 ******/
+/****** Object:  Index [UQ__Store__DB2DB4810627D23A]    Script Date: 17.05.2025 12:13:32 ******/
 ALTER TABLE [dbo].[Store] ADD UNIQUE NONCLUSTERED 
 (
 	[store_name] ASC
@@ -397,7 +421,7 @@ ALTER TABLE [dbo].[Store] ADD UNIQUE NONCLUSTERED
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__Supplier__CCCEE566B29BF776]    Script Date: 14.03.2025 14:15:39 ******/
+/****** Object:  Index [UQ__Supplier__CCCEE566AC5B5321]    Script Date: 17.05.2025 12:13:32 ******/
 ALTER TABLE [dbo].[Supplier] ADD UNIQUE NONCLUSTERED 
 (
 	[contact_phone] ASC
